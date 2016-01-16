@@ -1,0 +1,6 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^GET\ /verify\.php\?key=([^\s&]+) [NC]
+RewriteRule ^verify\.php$ /verify/%1? [R=301,L]
+
+RewriteRule ^verify/([^/]+)/?$ /verify.php?key=$1 [NC,L]
