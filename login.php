@@ -17,7 +17,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 
                     $email = htmlentities(mysqli_real_escape_string($connection, trim($_POST['email'])));
                     $password = sha1(md5(htmlentities(mysqli_real_escape_string($connection, trim($_POST['password'])))));
-                    //$status = 1; // Here we set by default status In-active.
                 
                     if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 
